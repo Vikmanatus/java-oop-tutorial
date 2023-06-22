@@ -1,4 +1,4 @@
-package com.vikman.enterprise.javaooptutorial;
+package com.vikman.enterprise.javaooptutorial.exercises;
 
 public class Bird extends Animal {
     private int wings;

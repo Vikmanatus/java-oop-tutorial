@@ -1,4 +1,4 @@
-package com.vikman.enterprise.javaooptutorial;
+package com.vikman.enterprise.javaooptutorial.exercises;
 
 public class Animal {
     private String name;
