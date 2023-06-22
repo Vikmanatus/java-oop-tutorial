@@ -12,7 +12,9 @@ public class Eye extends Organ{
         return color;
     }
 
-    public void closeEye(){
+    @Override
+    public void runMedicalAction() {
         System.out.println(this.getName()+ " closed");
     }
+
 }

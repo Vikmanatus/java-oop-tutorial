@@ -7,7 +7,8 @@ public class Heart extends Organ{
         super(name, medicalCondition, doctorAction);
         this.heartRate = heartRate;
     }
-    public void changeHeartRate(int newHeartRate){
+    @Override
+    public void runMedicalAction(int newHeartRate) {
         this.heartRate = newHeartRate;
         System.out.println("Heart rate changed to: "+ this.heartRate);
     }

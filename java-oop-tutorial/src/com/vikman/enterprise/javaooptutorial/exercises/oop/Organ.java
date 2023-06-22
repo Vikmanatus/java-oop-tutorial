@@ -15,7 +15,12 @@ public class Organ {
         this.medicalCondition = medicalCondition;
         this.doctorAction = doctorAction;
     }
+    public void runMedicalAction(){
+        // Nothing to do
+    }
+    public void runMedicalAction(int newHeartRate) {
 
+    }
     public String getDoctorAction() {
         return doctorAction;
     }
@@ -28,7 +33,5 @@ public class Organ {
         return medicalCondition;
     }
 
-    public void setMedicalCondition(String medicalCondition) {
-        this.medicalCondition = medicalCondition;
-    }
+
 }

@@ -91,7 +91,7 @@ public class DoctorProgram {
     }
     private void handleOrganEvents(Organ organ, Scanner scanner){
         this.printOrganInformation(organ);
-        if(organ.getName() == "Skin"){
+        if(organ.getName().equals("Skin")){
             return;
         }
         int userAction = scanner.nextInt();
@@ -99,13 +99,13 @@ public class DoctorProgram {
             if(organ instanceof Heart){
                 System.out.println("Enter the new heart rate:");
                 int updatedHeartRate = scanner.nextInt();
-                ((Heart) organ).changeHeartRate(updatedHeartRate);
+                organ.runMedicalAction(updatedHeartRate);
             }
             if(organ instanceof Eye){
-                ((Eye) organ).closeEye();
+                organ.runMedicalAction();
             }
             if(organ instanceof Stomach){
-                ((Stomach) organ).digest();
+                organ.runMedicalAction();
             }
         }
     }
