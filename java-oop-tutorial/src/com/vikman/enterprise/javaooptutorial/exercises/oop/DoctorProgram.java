@@ -72,25 +72,8 @@ public class DoctorProgram {
 
         }while (!this.quitRequired);
     }
-    private void printOrganInformation(Organ organ){
-        System.out.println("Name: "+ organ.getName());
-        System.out.println("Medical condition: "+ organ.getMedicalCondition());
-        if(organ instanceof Heart){
-            System.out.println("Heart rate: "+ ((Heart) organ).getHeartRate());
-        }
-        if(organ instanceof Eye){
-            System.out.println("Color: "+ ((Eye) organ).getColor());
-        }
-        if(organ instanceof Stomach){
-            System.out.println("Need to be fed");
-        }
-        if(organ.getDoctorAction() != null){
-            System.out.println("        1. "+ organ.getDoctorAction());
-        }
-
-    }
     private void handleOrganEvents(Organ organ, Scanner scanner){
-        this.printOrganInformation(organ);
+        organ.printOrganInformation();
         if(organ.getName().equals("Skin")){
             return;
         }

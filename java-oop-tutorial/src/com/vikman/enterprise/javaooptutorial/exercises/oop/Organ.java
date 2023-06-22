@@ -15,6 +15,23 @@ public class Organ {
         this.medicalCondition = medicalCondition;
         this.doctorAction = doctorAction;
     }
+    public void printOrganInformation(){
+        System.out.println("Name: "+ this.getName());
+        System.out.println("Medical condition: "+ this.getMedicalCondition());
+        if(this instanceof Heart){
+            System.out.println("Heart rate: "+ ((Heart) this).getHeartRate());
+        }
+        if(this instanceof Eye){
+            System.out.println("Color: "+ ((Eye) this).getColor());
+        }
+        if(this instanceof Stomach){
+            System.out.println("Need to be fed");
+        }
+        if(this.getDoctorAction() != null){
+            System.out.println("        1. "+ this.getDoctorAction());
+        }
+
+    }
     public void runMedicalAction(){
         // Nothing to do
     }
