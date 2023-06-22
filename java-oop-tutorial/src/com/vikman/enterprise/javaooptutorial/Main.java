@@ -46,19 +46,25 @@ public class Main {
         }
 
         while (tries < MAX_TRIES){
-            int userGuess = scanner.nextInt();
+            try{
+                Scanner numberScanner = new Scanner(System.in);
+                int userGuess = numberScanner.nextInt();
 
-            if(randomNumber < userGuess){
-                System.out.println("The secret number is lower than your choice");
-                tries+=1;
-            }
-            if(randomNumber == userGuess){
-                System.out.println("Congratulations ! You win !");
-                break;
-            }
-            if(randomNumber > userGuess){
-                System.out.println("The secret number is greater than your choice");
-                tries+=1;
+                if(randomNumber < userGuess){
+                    System.out.println("The secret number is lower than your choice");
+                    tries+=1;
+                }
+                if(randomNumber == userGuess){
+                    System.out.println("Congratulations ! You win !");
+                    break;
+                }
+                if(randomNumber > userGuess){
+                    System.out.println("The secret number is greater than your choice");
+                    tries+=1;
+                }
+
+            }catch (InputMismatchException e){
+                System.out.println("You must enter a number !");
             }
         }
 
