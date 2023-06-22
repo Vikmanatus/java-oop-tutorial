@@ -1,20 +1,24 @@
 package com.vikman.enterprise.javaooptutorial;
 
-import com.vikman.enterprise.javaooptutorial.exercises.GuessNumber;
+import com.vikman.enterprise.javaooptutorial.car.Car;
+import com.vikman.enterprise.javaooptutorial.car.Engine;
+import com.vikman.enterprise.javaooptutorial.exercises.oop.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Phone iPhone = new Phone("iPhone 11",5,8, 8);
-        System.out.println(iPhone.getName());
-        iPhone.playMusing("California Love");
+//        Patient tom = new Patient("Tom", 25);
+        boolean hasQuitSelected = false;
+        DoctorProgram doctorProgram = new DoctorProgram();
+        doctorProgram.runGame();
+//        do {
+//            System.out.println("Choose an organ");
+//            printOptions(organs);
+//
+//        }while (hasQuitSelected == false);
 
-        Bird phoenix = new Bird("Phoenix", "Golden", 2, false, 2);
-        System.out.println(phoenix.getName());
-        phoenix.eat("worms");
-
-        phoenix.fly();
-        phoenix.fly(130);
     }
 }
