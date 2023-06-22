@@ -10,6 +10,11 @@ public class Main {
         System.out.println(iPhone.getName());
         iPhone.playMusing("California Love");
 
-        Phone pixelAndroidPhone = new Phone("Pixel 6", 16);
+        Bird phoenix = new Bird("Phoenix", "Golden", 2, false, 2);
+        System.out.println(phoenix.getName());
+        phoenix.eat("worms");
+
+        phoenix.fly();
+        phoenix.fly(130);
     }
 }
