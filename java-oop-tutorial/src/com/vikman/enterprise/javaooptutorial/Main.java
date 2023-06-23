@@ -9,13 +9,15 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        CarInterface teslaCar = new ElectricCar("Tesla");
+        ElectricCar teslaCar = new ElectricCar("Tesla");
         teslaCar.start();
         teslaCar.move(60);
-        CarInterface toyotaCar = new FossilFuelCar("Toyota");
+        teslaCar.startRadio();
+        teslaCar.turnRadioOff();
+        FossilFuelCar toyotaCar = new FossilFuelCar("Toyota");
         toyotaCar.start();
         toyotaCar.move(90);
-
-
+        toyotaCar.startRadio();
+        toyotaCar.turnRadioOff();
     }
 }

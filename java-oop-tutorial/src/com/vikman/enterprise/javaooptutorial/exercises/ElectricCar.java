@@ -1,6 +1,6 @@
 package com.vikman.enterprise.javaooptutorial.exercises;
 
-public class ElectricCar implements CarInterface{
+public class ElectricCar extends CarAbstractClass implements CarInterface{
     private String carModel;
 
     public ElectricCar(String carModel) {
@@ -17,11 +17,16 @@ public class ElectricCar implements CarInterface{
 
     @Override
     public void start() {
-        System.out.println("Car started");
+        System.out.println("Electric car started");
     }
 
     @Override
     public void move(int speed) {
-        System.out.println("Car moving at speed: "+ speed+ " km/h !");
+        System.out.println("Electric car moving at speed: "+ speed+ " km/h !");
+    }
+
+    @Override
+    public void startRadio() {
+        System.out.println("Electric car starting radio...");
     }
 }

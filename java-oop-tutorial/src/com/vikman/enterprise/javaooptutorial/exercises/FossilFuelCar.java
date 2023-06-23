@@ -1,6 +1,6 @@
 package com.vikman.enterprise.javaooptutorial.exercises;
 
-public class FossilFuelCar implements CarInterface{
+public class FossilFuelCar extends CarAbstractClass implements CarInterface{
     private String carModel;
 
     public FossilFuelCar(String carModel) {
@@ -23,5 +23,10 @@ public class FossilFuelCar implements CarInterface{
     @Override
     public void move(int speed) {
         System.out.println("Fossil car moving at speed: "+ speed+ " km/h !");
+    }
+
+    @Override
+    public void startRadio() {
+        System.out.println("Fossil car starting radio...");
     }
 }
