@@ -4,6 +4,7 @@ public class ElectricCar extends CarAbstractClass implements CarInterface{
     private String carModel;
 
     public ElectricCar(String carModel) {
+        super(carModel);
         this.carModel = carModel;
     }
 

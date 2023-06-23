@@ -4,6 +4,7 @@ public class FossilFuelCar extends CarAbstractClass implements CarInterface{
     private String carModel;
 
     public FossilFuelCar(String carModel) {
+        super(carModel);
         this.carModel = carModel;
     }
 
