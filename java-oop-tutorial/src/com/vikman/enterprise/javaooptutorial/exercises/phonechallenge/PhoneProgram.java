@@ -32,42 +32,59 @@ public class PhoneProgram {
         System.out.println("2. Send a new message");
         System.out.println("3. Go back to the previous menu");
     }
-    private void handleContactsOption(){
+    private void handleContactsOption() {
+        boolean contactMenuQuit = false;
         Scanner contactAction = new Scanner(System.in);
-        int userSelection = contactAction.nextInt();
-        switch (userSelection){
-            case 1:
-                this.contactsApp.displayContacts();
-                break;
-            case 2:
-                this.contactsApp.insertContact();
-                break;
-            case 3:
-                this.contactsApp.searchContacts();
-                break;
-            case 4:
-                this.contactsApp.deleteContact();
-                break;
-            case 5:
-                break;
-            default:
-                break;
+
+        while (!contactMenuQuit) {
+            int userSelection = contactAction.nextInt();
+            switch (userSelection) {
+                case 1:
+                    this.contactsApp.displayContacts();
+                    break;
+                case 2:
+                    this.contactsApp.insertContact();
+                    break;
+                case 3:
+                    this.contactsApp.searchContacts();
+                    break;
+                case 4:
+                    this.contactsApp.deleteContact();
+                    break;
+                case 5:
+                    contactMenuQuit = true;
+                    break;
+                default:
+                    break;
+            }
+            if(userSelection != 5){
+                System.out.println("\n");
+                this.displayContactsMenu();
+            }
         }
     }
     private void handleMenuOption(){
+        boolean messageMenuQuit = false;
         Scanner messageAction = new Scanner(System.in);
-        int userSelection = messageAction.nextInt();
-        switch (userSelection){
-            case 1:
-                this.messagesApp.displayMessages();
-                break;
-            case 2:
-                this.messagesApp.sendMessage(this.contactsApp);
-                break;
-            case 3:
-                break;
-            default:
-                break;
+        while (!messageMenuQuit){
+            int userSelection = messageAction.nextInt();
+            switch (userSelection){
+                case 1:
+                    this.messagesApp.displayMessages();
+                    break;
+                case 2:
+                    this.messagesApp.sendMessage(this.contactsApp);
+                    break;
+                case 3:
+                    messageMenuQuit = true;
+                    break;
+                default:
+                    break;
+            }
+            if(userSelection != 3){
+                System.out.println("\n");
+                this.displayMessagesMenu();
+            }
         }
     }
     public void runProgram(){

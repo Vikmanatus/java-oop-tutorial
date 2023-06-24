@@ -104,29 +104,20 @@ public class ContactsApp {
     }
     public void deleteContact(){
         this.displayContacts();
-        System.out.println("Please enter the name of the contact you want to delete");
+        System.out.println("Please enter the ID of the contact you want to delete");
         Scanner scanner = new Scanner(System.in);
-        String contactName = scanner.next();
-        boolean isContactRemoved = this.removeContact(contactName);
+        int contactIndex = scanner.nextInt();
+        boolean isContactRemoved = this.removeContact(contactIndex);
         if(isContactRemoved){
             System.out.println("Contact successfully deleted");
             return;
         }
         System.out.println("Something wrong happened, we could not delete the contact. Please try again later");
     }
-    private boolean removeContact(String contactName){
+    private boolean removeContact(int contactIndex){
         boolean success = false;
-        for (int i=0; i < this.contactsList.size(); i++){
-            if(this.contactsList.get(i).getName().equalsIgnoreCase(contactName)){
-                contactsList.remove(i);
-                success = true;
-                break;
-            }
-        }
-        if(success){
-            return true;
-        }
-        return false;
+        this.contactsList.remove(contactIndex);
+        return true;
     }
 
 }
