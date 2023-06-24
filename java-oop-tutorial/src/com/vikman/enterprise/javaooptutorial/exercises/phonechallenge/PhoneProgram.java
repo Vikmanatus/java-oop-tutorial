@@ -73,8 +73,8 @@ public class PhoneProgram {
     public void runProgram(){
         boolean quitRequested = false;
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to your awesome phone");
         while (!quitRequested){
-            System.out.println("Welcome to your awesome phone");
             System.out.println("\n");
             System.out.println("1. Manage contacts");
             System.out.println("2. Messages");

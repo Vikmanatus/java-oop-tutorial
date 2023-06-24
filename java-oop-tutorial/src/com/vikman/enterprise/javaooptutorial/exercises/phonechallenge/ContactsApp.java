@@ -26,20 +26,20 @@ public class ContactsApp {
     public void insertContact(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the name of the contact:");
-        String name = scanner.next();
+        String name = scanner.nextLine();
         System.out.println("Enter the phone number of the contact:");
-        String phoneNumber = scanner.next();
+        String phoneNumber = scanner.nextLine();
         System.out.println("Enter the address of the contact:");
-        String address = scanner.next();
+        String address = scanner.nextLine();
         System.out.println("Enter the email of the contact:");
-        String email = scanner.next();
+        String email = scanner.nextLine();
         Contact newContact = new Contact(name, phoneNumber, address,email, new ArrayList<>());
         this.contactsList.add(newContact);
         System.out.println("Contact registered !");
 
     }
     private void displayContact(Contact contact, int index){
-        System.out.println("Index"+ index);
+        System.out.println("Index: "+ index);
         System.out.println("Name: "+contact.getName());
         System.out.println("Phone number: "+contact.getPhoneNumber());
     }
@@ -55,13 +55,14 @@ public class ContactsApp {
         System.out.println("List of contacts:");
         for (int i =0; i<this.contactsList.size(); i++){
             this.displayContact(this.contactsList.get(i), i);
+            System.out.println("\n");
         }
     }
     private Contact searchContactByName(String contactName){
         return this.contactsList.stream().filter(contact -> contact.getName().equalsIgnoreCase(contactName)).findFirst().orElse(null);
     }
     private Contact searchContactByEmail(String email){
-        return this.contactsList.stream().filter(contact -> contact.getPhoneNumber().equalsIgnoreCase(email)).findFirst().orElse(null);
+        return this.contactsList.stream().filter(contact -> contact.getEmail().equalsIgnoreCase(email)).findFirst().orElse(null);
     }
     private void performSearch(Scanner scanner, String message){
         System.out.println(message);

@@ -31,6 +31,7 @@ public class MessagesApp {
             System.out.println("Receiver: "+this.messagesList.get(i).getReceiver().getName());
             System.out.println("Sender: "+this.messagesList.get(i).getSender().getName());
             System.out.println("Content: "+ this.messagesList.get(i).getContent());
+            System.out.println("\n");
         }
     }
 
@@ -48,7 +49,8 @@ public class MessagesApp {
         Contact requestedContact = contactsApp.getContactsList().get(contactIndex);
         Contact sender = contactsApp.getContactsList().get(0);
         System.out.println("Please enter the content of your message:");
-        String content = scanner.next();
+        Scanner contentScanner = new Scanner(System.in);
+        String content = contentScanner.nextLine();
         this.messagesList.add(new Message(content,sender, requestedContact));
         System.out.println("Message sent !");
     }

@@ -28,5 +28,7 @@ public class Contact {
     public String getAddress() {
         return address;
     }
-
+    public String getEmail(){
+        return email;
+    }
 }
