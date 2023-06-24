@@ -5,7 +5,13 @@ import java.util.Scanner;
 
 public class MessagesApp {
     public ArrayList<Message> messagesList;
-
+    private static MessagesApp instance;
+    public static MessagesApp getInstance(ArrayList<Message> messagesList) {
+        if(instance == null){
+            instance = new MessagesApp(messagesList);
+        }
+        return instance;
+    }
     public MessagesApp(ArrayList<Message> messagesList) {
         this.messagesList = messagesList;
     }
